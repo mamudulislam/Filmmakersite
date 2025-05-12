@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from "framer-motion";
 import jhonewhick from '../../assets/jhonewhick.png';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@radix-ui/react-accordion';
-import Rightsid from "../../assets/Rightsid.png"
+import Rightsid from "../../assets/Rightsid.png";
 
 const fadeItem = {
     hidden: { opacity: 0, y: 20 },
@@ -72,7 +72,7 @@ const Pricing = () => {
     const faqs = [
         {
             question: "What is film production?",
-            answer: "Lorem ipsum dolor sit amet consectetur iquam lectus sollicitudin faucibus acides quam nausa fraddunt venenuis."
+            answer: "Film production is the process of creating a film, from idea development to distribution."
         },
         {
             question: "Who is involved in film production?",
@@ -238,14 +238,6 @@ const Pricing = () => {
                 </motion.p>
             </div>
 
-
-
-
-
-
-
-
-
             <motion.div
                 className="flex flex-col md:flex-row gap-10 items-start bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-xl mb-[100px]"
                 initial={{ opacity: 0, y: 40 }}
@@ -265,41 +257,15 @@ const Pricing = () => {
                         Film Production FAQ
                     </h2>
                     <Accordion type="single" collapsible className="w-full space-y-3">
-                        {[
-                            {
-                                value: "item-1",
-                                question: "What is film production?",
-                                answer: "Film production is the process of creating a film, from idea development to distribution..."
-                            },
-                            {
-                                value: "item-2",
-                                question: "Who is involved in film production?",
-                                answer: "Directors, producers, writers, actors, camera operators, and more all play a part in making a film."
-                            },
-                            {
-                                value: "item-3",
-                                question: "How long does it take to produce a film?",
-                                answer: "It varies by project but can range from a few months to several years."
-                            },
-                            {
-                                value: "item-4",
-                                question: "What is pre-production?",
-                                answer: "Pre-production includes planning, casting, location scouting, script revisions, and scheduling."
-                            },
-                            {
-                                value: "item-5",
-                                question: "What is production?",
-                                answer: "Production is the phase where the film is actually shot with the cast and crew on set."
-                            }
-                        ].map(({ value, question, answer }, index) => (
+                        {faqs.map(({ question, answer }, index) => (
                             <motion.div
-                                key={value}
+                                key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
                             >
-                                <AccordionItem value={value}>
+                                <AccordionItem value={`item-${index}`}>
                                     <AccordionTrigger className="text-left py-4 font-semibold text-gray-800 hover:bg-gray-100 transition-all duration-200 px-5 rounded-lg shadow-sm">
                                         {question}
                                     </AccordionTrigger>
@@ -329,11 +295,6 @@ const Pricing = () => {
                     </div>
                 </motion.div>
             </motion.div>
-
-
-
-
-
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import jhonewhick from "../../assets/jhonewhick.png";
 
@@ -15,6 +15,32 @@ const fadeItem = {
 };
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const { name, email, subject, message } = formData;
+        if (!name || !email || !subject || !message) {
+            alert("Please fill in all fields.");
+        } else {
+            alert("Message sent!");
+            // Here you would handle the form submission logic (e.g., sending data to a server)
+        }
+    };
+
     return (
         <div className='mx-auto max-w-[1170px] w-full bg-[#1A1B2A66] pt-[158px] pb-[10px] px-4'>
             <motion.div
@@ -64,7 +90,7 @@ const Contact = () => {
                         <p className='font-Source font-normal text-[20px] leading-[30px] text-[#82869A]'>info@filmina.com</p>
                         <p className='font-Source font-normal text-[20px] leading-[30px] text-[#82869A]'>(+021) 345 678 910</p>
                     </div>
-                    <img src={jhonewhick} alt="" className='w-[550px] h-[280px]' />
+                    <img src={jhonewhick} alt="Jhone E. Wick illustration" className='w-full max-w-[550px] h-auto' />
                 </motion.div>
 
                 {/* Right side form with updated design */}
@@ -83,11 +109,14 @@ const Contact = () => {
                     </p>
 
                     {/* Updated form design */}
-                    <form className="space-y-6 bg-white p-6 rounded-xl shadow-md">
+                    <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-xl shadow-md max-w-[500px] mx-auto">
                         <div>
                             <label className="block text-[#4A4A4A] text-sm font-medium mb-1">Name</label>
                             <input
                                 type="text"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
                                 className="w-full border border-gray-300 rounded-md px-4 py-3 text-[#1A1B2A] placeholder-gray-400 focus:outline-none focus:border-[#FF5E3A] transition-all"
                                 placeholder="Your name"
                             />
@@ -97,6 +126,9 @@ const Contact = () => {
                             <label className="block text-[#4A4A4A] text-sm font-medium mb-1">Email Address</label>
                             <input
                                 type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 className="w-full border border-gray-300 rounded-md px-4 py-3 text-[#1A1B2A] placeholder-gray-400 focus:outline-none focus:border-[#FF5E3A] transition-all"
                                 placeholder="you@example.com"
                             />
@@ -106,6 +138,9 @@ const Contact = () => {
                             <label className="block text-[#4A4A4A] text-sm font-medium mb-1">Subject</label>
                             <input
                                 type="text"
+                                name="subject"
+                                value={formData.subject}
+                                onChange={handleChange}
                                 className="w-full border border-gray-300 rounded-md px-4 py-3 text-[#1A1B2A] placeholder-gray-400 focus:outline-none focus:border-[#FF5E3A] transition-all"
                                 placeholder="Subject"
                             />
@@ -115,6 +150,9 @@ const Contact = () => {
                             <label className="block text-[#4A4A4A] text-sm font-medium mb-1">Message</label>
                             <textarea
                                 rows="5"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
                                 className="w-full border border-gray-300 rounded-md px-4 py-3 text-[#1A1B2A] placeholder-gray-400 focus:outline-none focus:border-[#FF5E3A] transition-all"
                                 placeholder="Write your message here..."
                             ></textarea>

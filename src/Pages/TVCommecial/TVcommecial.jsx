@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import Captinamerica from '../../assets/Captinamerica.png'
 import Filmmakers from '../../assets/Filmmakers.png'
 import Cinematography from '../../assets/Cinematography.png'
+
 const container = {
     hidden: { opacity: 0 },
     show: {
@@ -20,7 +21,7 @@ const fadeItem = {
 
 const TVcommecial = () => {
     return (
-        <div className='mx-auto w-[1170px] bg-[#1A1B2A66] pt-[158px] pb-[10px]'>
+        <div className='mx-auto w-full max-w-[1170px] bg-[#1A1B2A66] pt-[158px] pb-[10px]'>
             <motion.div
                 initial="hidden"
                 whileInView="show"
@@ -29,13 +30,13 @@ const TVcommecial = () => {
             >
                 <div className="flex items-center gap-2 mb-4 justify-center">
                     <div className="w-10 h-[2px] bg-[#FF5E3A]"></div>
-                    <p className="text-[#FF5E3A] font-roboto text-sm font-extrabold uppercase">TV Commecial</p>
+                    <p className="text-[#FF5E3A] font-roboto text-sm font-extrabold uppercase">TV Commercial</p>
                 </div>
                 <motion.h2
-                    className='font-Roboto font-bold text-[96px] leading-[101px] text-center text-white pb-[141px]'
+                    className='font-Roboto font-bold text-[48px] md:text-[72px] lg:text-[96px] leading-[101px] text-center text-white pb-[141px]'
                     variants={fadeItem}
                 >
-                    TV Commecial
+                    TV Commercial
                 </motion.h2>
             </motion.div>
 
@@ -47,11 +48,11 @@ const TVcommecial = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
             >
-                <img src={Captinamerica} alt="Captinamerica" className='w-[1170px] h-[658px]' />
+                <img src={Captinamerica} alt="Captain America" className='w-full h-[auto] max-h-[658px] object-cover' />
             </motion.div>
 
             {/* Text + Filmmaker Image Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4">
                 <motion.div
                     className="pt-[50px] md:pt-[100px]"
                     initial="hidden"
@@ -98,7 +99,7 @@ const TVcommecial = () => {
                 viewport={{ once: true }}
                 variants={container}
             >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4">
                     <div className="flex justify-center">
                         <img
                             src={Cinematography}
@@ -168,48 +169,46 @@ const TVcommecial = () => {
                 viewport={{ once: true }}
                 variants={fadeItem}
             >
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-4 px-4">
                     <div className="w-10 h-[2px] bg-[#FF5E3A]"></div>
                     <p className="text-[#FF5E3A] font-Roboto text-sm font-extrabold uppercase">works</p>
                 </div>
-                <h3 className="font-Roboto font-extrabold text-3xl md:text-5xl lg:text-[72px] text-white pb-5">
+                <h3 className="font-Roboto font-extrabold text-3xl md:text-5xl lg:text-[72px] text-white pb-5 px-4">
                     Check Out Our Latest Works
                 </h3>
-                <p className="font-Inter font-normal text-base text-[#82869A] pb-[50px]">
-                    Proin et magna blandit arcu pellentesque scelerisque sit amet a sapien aenean
+                <p className="font-Inter font-normal text-base text-[#82869A] pb-[50px] px-4">
+                    Proin et magna blandit arcu pellentesque scelerisque sit amet a sapien
                 </p>
             </motion.div>
 
             {/* Work Cards */}
             <motion.div
-                className="min-h-0 md:min-h-screen p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-6"
+                className="min-h-0 md:min-h-screen p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
                 variants={container}
             >
-                {[
-                    {
-                        title: "TV Commercial",
-                        description: "Proin et magna blandit arcu pellentesque scelerisque sit amet.",
-                        image: Cinematography
-                    },
-                    {
-                        title: "Indie Movie",
-                        description: "Proin et magna blandit arcu pellentesque scelerisque sit amet.",
-                        image: Cinematography
-                    },
-                    {
-                        title: "Documentary",
-                        description: "Proin et magna blandit arcu pellentesque scelerisque sit amet.",
-                        image: Cinematography
-                    },
-                    {
-                        title: "Company Profile",
-                        description: "Proin et magna blandit arcu pellentesque scelerisque sit amet.",
-                        image: Cinematography
-                    }
-                ].map((card, index) => (
+                {[{
+                    title: "TV Commercial",
+                    description: "Proin et magna blandit arcu pellentesque scelerisque sit amet.",
+                    image: Cinematography
+                },
+                {
+                    title: "Indie Movie",
+                    description: "Proin et magna blandit arcu pellentesque scelerisque sit amet.",
+                    image: Cinematography
+                },
+                {
+                    title: "Documentary",
+                    description: "Proin et magna blandit arcu pellentesque scelerisque sit amet.",
+                    image: Cinematography
+                },
+                {
+                    title: "Company Profile",
+                    description: "Proin et magna blandit arcu pellentesque scelerisque sit amet.",
+                    image: Cinematography
+                }].map((card, index) => (
                     <motion.div
                         key={index}
                         className="bg-gray-700 rounded-lg shadow-lg p-6 border border-purple-600 transition-transform hover:scale-105"
