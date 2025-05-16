@@ -13,4 +13,4 @@ This is a modern and responsive Filmmaker web application built with **React** a
 - [Vite](https://vitejs.dev/)
 - [React Router](https://reactrouter.com/) for routing
 - [Tailwind CSS](https://tailwindcss.com/) or CSS Modules for styling
-- [Motion](https://motion.dev/) A robust animation library for modern web projects using JavaScript, React, or Vue.
+- [Motion](https://motion.dev/) A robust animation library for modern web projects.
