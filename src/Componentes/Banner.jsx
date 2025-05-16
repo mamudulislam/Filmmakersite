@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const Banner = () => {
     return (
-        <div className="mx-auto w-full max-w-screen-xl bg-[#1A1B2A66] px-6 pt-20 md:pt-[158px]">
+        <div className="mx-auto w-full max-w-screen-xl px-14 pt-20 md:pt-[158px]">
             <motion.p
                 className="font-Roboto uppercase font-extrabold text-sm text-[#FF5E3A] mb-2 md:mb-[10px]"
                 initial={{ opacity: 0 }}
