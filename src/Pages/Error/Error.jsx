@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const ErrorPage = () => {
     return (
         <motion.div
-            className="mx-auto w-full min-h-screen flex items-center justify-center bg-[#1A1B2A] text-white px-4"
+            className="max-w-[1170px] mx-auto min-h-screen flex items-center justify-center bg-[#1A1B2A] text-white px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
