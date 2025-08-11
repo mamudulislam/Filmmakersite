@@ -60,7 +60,7 @@ const Navbar = () => {
                         <Link to="/services">Services</Link>
                     </li>
                     <li className='hover:text-[#FF5E3A] duration-150'>
-                        <Link to="/portfolio">Works</Link>
+                        <Link to="/Works">Works</Link>
                     </li>
 
                     {/* Dropdown */}

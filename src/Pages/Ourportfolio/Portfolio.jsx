@@ -26,7 +26,7 @@ const Portfolio = () => {
 
     return (
         <div className='bg-[#1A1B2A66] py-16'>
-            <div className="mx-auto max-w-screen-xl px-4">
+            <div className="mx-auto max-w-screen-xl px-16">
                 {/* Portfolio Header */}
                 <div className="flex items-center gap-2 mb-4 justify-center">
                     <div className="w-8 h-[2px] bg-[#FF5E3A]"></div>
